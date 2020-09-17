@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">AsyncLabsTask  -ISS App</string>
+    <string name="app_name">International Space Station News</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="twitter">Twitter</string>
+    <string name="location">Location</string>
 </resources>
