@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_twitter"
+        android:icon="@drawable/ic_twitter"
+        android:title="@string/twitter" />
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/nav_location"
+        android:icon="@drawable/ic_location"
+        android:title="@string/location" />
+
+</menu>
