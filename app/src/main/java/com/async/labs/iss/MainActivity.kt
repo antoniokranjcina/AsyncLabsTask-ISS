@@ -5,25 +5,43 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.async.labs.iss.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.toolbar.view.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        window.statusBarColor = resources.getColor(R.color.white, theme)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        window.statusBarColor = resources.getColor(R.color.bottom_nav_color, theme)
+        //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val navController = findNavController(R.id.fragment)
 
-        bottomNavigationView.setupWithNavController(navController)
+        binding.bottomNavigation.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.nav_home -> bottomNavigationView.visibility = View.VISIBLE
+                R.id.nav_twitter -> {
+                    binding.bottomNavigation.visibility = View.VISIBLE
+                    setToolbar("Twitter")
+                }
+                R.id.nav_home -> {
+                    binding.bottomNavigation.visibility = View.VISIBLE
+                    setToolbar("Home")
+                }
+                R.id.nav_location -> {
+                    binding.bottomNavigation.visibility = View.VISIBLE
+                    setToolbar("Location")
+                }
             }
         }
+    }
+
+    private fun setToolbar(title: String) {
+        binding.toolbar.toolbar_text_view_title.text = title
     }
 }
