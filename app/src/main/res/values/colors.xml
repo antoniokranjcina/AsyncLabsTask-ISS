@@ -5,5 +5,5 @@
     <color name="colorAccent">#03DAC5</color>
 
     <color name="white">#fff</color>
-    <color name="bottom_nav_color">#12279F</color>
+    <color name="theme_color">#1D688F</color>
 </resources>

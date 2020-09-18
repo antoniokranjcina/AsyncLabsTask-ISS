@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/bottom_nav_color"
+    android:background="@color/theme_color"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:weightSum="100">

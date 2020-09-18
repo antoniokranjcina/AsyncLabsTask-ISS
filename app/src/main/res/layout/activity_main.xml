@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
-        app:backgroundTint="@color/bottom_nav_color"
+        app:backgroundTint="@color/theme_color"
         app:elevation="0dp"
         app:itemIconTint="@drawable/bottom_navigation_selector"
         app:itemTextColor="@drawable/bottom_navigation_selector"
