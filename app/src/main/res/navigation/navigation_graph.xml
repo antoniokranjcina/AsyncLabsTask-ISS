@@ -7,9 +7,13 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.async.labs.iss.fragments.home.HomeFragment"
+        android:name="com.async.labs.iss.fragments.home.view.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_homeItemFragment"
+            app:destination="@id/homeItemFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_twitter"
         android:name="com.async.labs.iss.fragments.twitter.TwitterFragment"
@@ -17,7 +21,16 @@
         tools:layout="@layout/fragment_twitter" />
     <fragment
         android:id="@+id/nav_location"
-        android:name="com.async.labs.iss.fragments.location.LocationFragment"
+        android:name="com.async.labs.iss.fragments.location.view.ui.LocationFragment"
         android:label="fragment_location"
         tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/homeItemFragment"
+        android:name="com.async.labs.iss.fragments.home.view.ui.HomeItemFragment"
+        android:label="fragment_home_item"
+        tools:layout="@layout/fragment_home_item">
+        <argument
+            android:name="home_item_about"
+            app:argType="com.async.labs.iss.fragments.home.service.model.HomeItemAbout" />
+    </fragment>
 </navigation>
