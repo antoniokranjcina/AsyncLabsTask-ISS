@@ -4,15 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.location.LocationFragment">
+    tools:context=".fragments.location.view.ui.LocationFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/location"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupMap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupMap"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radio_button_terrain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:gravity="center_horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="@string/terrain"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radio_button_satellite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_selector"
+            android:button="@android:color/transparent"
+            android:gravity="center_horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="@string/satellite"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radio_button_hybrid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_selector"
+            android:button="@android:color/transparent"
+            android:gravity="center_horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="@string/hybrid"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
