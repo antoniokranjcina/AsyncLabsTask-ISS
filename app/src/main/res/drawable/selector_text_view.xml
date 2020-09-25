@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- disabled state-->
+    <item android:drawable="@android:color/holo_red_light" android:state_enabled="false" />
+    <!-- pressed state / clicked state -->
+    <item android:drawable="@color/grey" android:state_enabled="true" android:state_pressed="true" />
+    <!-- focused state -->
+    <item android:drawable="@color/grey" android:state_enabled="true" android:state_focused="true" />
+    <!-- enabled state / default state-->
+    <item android:drawable="@android:color/transparent" android:state_enabled="true" />
+</selector>
