@@ -108,9 +108,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (web_view.canGoBack()) {
-            web_view.goBack()
-        } else {
+        try {
+            if (web_view.canGoBack()) {
+                web_view.goBack()
+            } else {
+                super.onBackPressed()
+            }
+        } catch (e: Exception) {
             super.onBackPressed()
         }
     }
