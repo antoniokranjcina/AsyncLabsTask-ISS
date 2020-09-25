@@ -5,15 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.async.labs.iss.databinding.FragmentHomeItemBinding
-import com.async.labs.iss.fragments.home.service.model.HomeItemAbout
+import com.async.labs.iss.fragments.home.service.model.HomeWikipediaItems
 import com.async.labs.iss.fragments.home.view.adapter.AdapterSubtitle
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.toolbar.view.*
+import kotlinx.android.synthetic.main.toolbar_sub_frag.view.*
 
 class HomeItemFragment : Fragment(), View.OnClickListener {
 
@@ -22,12 +23,13 @@ class HomeItemFragment : Fragment(), View.OnClickListener {
 
     private val args: HomeItemFragmentArgs by navArgs()
 
-    private lateinit var homeItemAbout: HomeItemAbout
+    private lateinit var homeWikipediaItems: HomeWikipediaItems
+    private lateinit var navController: NavController
     private val adapterSubtitle = AdapterSubtitle()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        homeItemAbout = args.homeItemAbout
+        homeWikipediaItems = args.homeWikipediaItems
     }
 
     override fun onCreateView(
@@ -41,41 +43,48 @@ class HomeItemFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
 
-        adapterSubtitle.submitList(homeItemAbout.subtitle)
+        adapterSubtitle.submitList(homeWikipediaItems.subtitle)
 
-        binding.toolbar.toolbar_text_view_title.text = homeItemAbout.title
-        binding.description.text = homeItemAbout.description
+        binding.toolbar.toolbar_text_view_title.text = homeWikipediaItems.title
+        binding.description.text = homeWikipediaItems.description
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = adapterSubtitle
             setHasFixedSize(true)
         }
 
+        viewLifecycleOwner.lifecycle.addObserver(binding.youtubePlayerView)
+
         binding.youtubePlayerView.addYouTubePlayerListener(object :
             AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                youTubePlayer.loadVideo(homeItemAbout.youtubeId!!, 0F)
+                youTubePlayer.loadVideo(homeWikipediaItems.youtubeId!!, 0F)
             }
         })
+
+        binding.youtubePlayerView
 
         setOnClickListeners()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.youtubePlayerView.release()
         _binding = null
     }
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-            toolbar.back_button.id -> {
+            binding.toolbar.back_button.id -> {
                 requireActivity().onBackPressed()
             }
         }
     }
 
     private fun setOnClickListeners() {
-        toolbar.back_button.setOnClickListener(this)
+        binding.toolbar.back_button.setOnClickListener(this)
     }
+
 }

@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_homeItemFragment"
-            app:destination="@id/homeItemFragment" />
+            app:destination="@id/homeItemFragment"
+            app:enterAnim="@anim/from_bottom" />
     </fragment>
     <fragment
         android:id="@+id/nav_twitter"
@@ -30,7 +31,7 @@
         android:label="fragment_home_item"
         tools:layout="@layout/fragment_home_item">
         <argument
-            android:name="home_item_about"
-            app:argType="com.async.labs.iss.fragments.home.service.model.HomeItemAbout" />
+            android:name="home_wikipedia_items"
+            app:argType="com.async.labs.iss.fragments.home.service.model.HomeWikipediaItems" />
     </fragment>
 </navigation>

@@ -9,15 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.async.labs.iss.R
-import com.async.labs.iss.fragments.home.service.model.Subtitle
-import kotlinx.android.synthetic.main.subtitle_item.view.*
+import com.async.labs.iss.fragments.home.service.model.Subtitles
+import kotlinx.android.synthetic.main.item_subtitle.view.*
 
 class AdapterSubtitle :
-    ListAdapter<Subtitle, AdapterSubtitle.ViewHolder>(SubtitleDiffCallback()) {
+    ListAdapter<Subtitles, AdapterSubtitle.ViewHolder>(SubtitleDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.subtitle_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_subtitle, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -25,7 +25,7 @@ class AdapterSubtitle :
         val adapterParagraph = AdapterParagraph()
         adapterParagraph.submitList(currentList[position].paragraphs)
 
-        holder.title.text = currentList[position].title
+        holder.title.text = currentList[position].titleSub
         holder.recyclerViewParagraphs.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = adapterParagraph
@@ -39,13 +39,13 @@ class AdapterSubtitle :
     }
 }
 
-class SubtitleDiffCallback : DiffUtil.ItemCallback<Subtitle>() {
-    override fun areItemsTheSame(oldItem: Subtitle, newItem: Subtitle): Boolean {
-        return oldItem.title == newItem.title &&
+class SubtitleDiffCallback : DiffUtil.ItemCallback<Subtitles>() {
+    override fun areItemsTheSame(oldItem: Subtitles, newItem: Subtitles): Boolean {
+        return oldItem.titleSub == newItem.titleSub &&
                 oldItem.paragraphs == newItem.paragraphs
     }
 
-    override fun areContentsTheSame(oldItem: Subtitle, newItem: Subtitle): Boolean {
+    override fun areContentsTheSame(oldItem: Subtitles, newItem: Subtitles): Boolean {
         return areItemsTheSame(oldItem, newItem)
     }
 }
