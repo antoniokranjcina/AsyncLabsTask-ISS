@@ -3,22 +3,25 @@ package com.async.labs.iss.fragments.home.service.model
 import android.os.Parcel
 import android.os.Parcelable
 
-data class HomeItemAbout(
+data class HomeWikipediaItems(
+    val _id: String?,
     val title: String?,
     val description: String?,
-    val subtitle: List<Subtitle>?,
+    val subtitle: List<Subtitles>?,
     val youtubeLink: String?,
     val youtubeId: String?
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
-        parcel.createTypedArrayList(Subtitle),
+        parcel.readString(),
+        parcel.createTypedArrayList(Subtitles),
         parcel.readString(),
         parcel.readString()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(_id)
         parcel.writeString(title)
         parcel.writeString(description)
         parcel.writeTypedList(subtitle)
@@ -30,12 +33,12 @@ data class HomeItemAbout(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<HomeItemAbout> {
-        override fun createFromParcel(parcel: Parcel): HomeItemAbout {
-            return HomeItemAbout(parcel)
+    companion object CREATOR : Parcelable.Creator<HomeWikipediaItems> {
+        override fun createFromParcel(parcel: Parcel): HomeWikipediaItems {
+            return HomeWikipediaItems(parcel)
         }
 
-        override fun newArray(size: Int): Array<HomeItemAbout?> {
+        override fun newArray(size: Int): Array<HomeWikipediaItems?> {
             return arrayOfNulls(size)
         }
     }

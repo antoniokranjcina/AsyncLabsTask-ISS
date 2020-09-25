@@ -23,4 +23,6 @@ data class Paragraphs(val paragraph: String?) : Parcelable {
             return arrayOfNulls(size)
         }
     }
+
+    override fun toString(): String = "\n\t $paragraph"
 }

@@ -6,6 +6,8 @@
     android:layout_height="?attr/actionBarSize"
     android:background="@color/theme_color"
     android:gravity="center_vertical"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
     android:orientation="horizontal"
     android:weightSum="100">
 
@@ -18,8 +20,8 @@
         android:id="@+id/back_button"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="10"
-        android:background="@drawable/image_button_selector"
+        android:layout_weight="15"
+        android:background="@drawable/selector_image_button"
         android:contentDescription="@string/src_content_description"
         android:src="@drawable/ic_back_arrow"
         app:tint="@color/white" />
@@ -33,7 +35,7 @@
         android:id="@+id/toolbar_text_view_title"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="84"
+        android:layout_weight="79"
         android:gravity="center_vertical"
         android:textColor="@color/white"
         android:textSize="22sp"
