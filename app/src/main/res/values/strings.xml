@@ -20,4 +20,6 @@
     <string name="iss_onboard_system">The critical systems are the atmosphere control system, the water supply system, the food supply facilities, the sanitation and hygiene equipment, and fire detection and suppression equipment. The Russian Orbital Segments life support systems are contained in the Zvezda service module. Some of </string>
     <string name="operations">Operations</string>
     <string name="src_content_description">Image</string>
+    <string name="all_information_is_from">All Information is from</string>
+    <string name="iss_wiki">https://en.wikipedia.org/wiki/International_Space_Station</string>
 </resources>

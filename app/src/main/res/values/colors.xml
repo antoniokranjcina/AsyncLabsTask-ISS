@@ -6,6 +6,8 @@
 
     <color name="white">#fff</color>
     <color name="black">#000</color>
-    <color name="grey">#66009688</color>
+    <color name="grey">#3E808080</color>
+    <color name="grey_image_button">#808080</color>
+    <color name="blue">#3F51B5</color>
     <color name="theme_color">#1D688F</color>
 </resources>
