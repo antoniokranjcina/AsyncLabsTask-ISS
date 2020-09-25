@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.async.labs.iss.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.dialog_help.view.*
+import kotlinx.android.synthetic.main.fragment_twitter.*
 import kotlinx.android.synthetic.main.toolbar_main_frag.view.*
 import kotlinx.android.synthetic.main.toolbar_sub_frag.view.toolbar_text_view_title
 
@@ -103,6 +104,14 @@ class MainActivity : AppCompatActivity() {
             binding.bottomNavigation.visibility = View.VISIBLE
         } else {
             binding.bottomNavigation.visibility = View.GONE
+        }
+    }
+
+    override fun onBackPressed() {
+        if (web_view.canGoBack()) {
+            web_view.goBack()
+        } else {
+            super.onBackPressed()
         }
     }
 }
