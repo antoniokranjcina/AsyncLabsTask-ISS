@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.async.labs.iss.R
-import com.async.labs.iss.fragments.home.service.model.HomeItemAbout
-import kotlinx.android.synthetic.main.home_item.view.*
+import com.async.labs.iss.fragments.home.service.model.HomeWikipediaItems
+import kotlinx.android.synthetic.main.item_wiki_home.view.*
 
 class AdapterHome(private val listener: OnItemClickListener) :
-    ListAdapter<HomeItemAbout, AdapterHome.ViewHolder>(HomeItemAboutDiffCallback()) {
+    ListAdapter<HomeWikipediaItems, AdapterHome.ViewHolder>(HomeItemAboutDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.home_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_wiki_home, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -43,18 +43,24 @@ class AdapterHome(private val listener: OnItemClickListener) :
     }
 
     interface OnItemClickListener {
-        fun onItemClick(homeItemAbout: HomeItemAbout)
+        fun onItemClick(homeWikipediaItems: HomeWikipediaItems)
     }
 }
 
-class HomeItemAboutDiffCallback : DiffUtil.ItemCallback<HomeItemAbout>() {
-    override fun areItemsTheSame(oldItem: HomeItemAbout, newItem: HomeItemAbout): Boolean {
+class HomeItemAboutDiffCallback : DiffUtil.ItemCallback<HomeWikipediaItems>() {
+    override fun areItemsTheSame(
+        oldItem: HomeWikipediaItems,
+        newItem: HomeWikipediaItems
+    ): Boolean {
         return oldItem.title == newItem.title &&
                 oldItem.description == newItem.description &&
                 oldItem.youtubeLink == newItem.youtubeLink
     }
 
-    override fun areContentsTheSame(oldItem: HomeItemAbout, newItem: HomeItemAbout): Boolean {
+    override fun areContentsTheSame(
+        oldItem: HomeWikipediaItems,
+        newItem: HomeWikipediaItems
+    ): Boolean {
         return areItemsTheSame(oldItem, newItem)
     }
 }
