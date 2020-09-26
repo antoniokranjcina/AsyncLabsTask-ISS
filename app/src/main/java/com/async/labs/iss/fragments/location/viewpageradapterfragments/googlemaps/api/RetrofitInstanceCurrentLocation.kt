@@ -1,4 +1,4 @@
-package com.async.labs.iss.fragments.location.api
+package com.async.labs.iss.fragments.location.viewpageradapterfragments.googlemaps.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

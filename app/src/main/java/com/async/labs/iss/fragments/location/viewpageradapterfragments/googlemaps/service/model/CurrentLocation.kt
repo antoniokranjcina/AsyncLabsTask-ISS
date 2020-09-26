@@ -1,4 +1,4 @@
-package com.async.labs.iss.fragments.location.service.model
+package com.async.labs.iss.fragments.location.viewpageradapterfragments.googlemaps.service.model
 
 import com.google.gson.annotations.SerializedName
 

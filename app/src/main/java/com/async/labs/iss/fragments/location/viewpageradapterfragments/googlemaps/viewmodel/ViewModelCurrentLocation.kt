@@ -1,12 +1,12 @@
-package com.async.labs.iss.fragments.location.viewmodel
+package com.async.labs.iss.fragments.location.viewpageradapterfragments.googlemaps.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.async.labs.iss.fragments.location.service.model.CurrentLocation
-import com.async.labs.iss.fragments.location.service.repository.RepositoryCurrentLocation
+import com.async.labs.iss.fragments.location.viewpageradapterfragments.googlemaps.service.model.CurrentLocation
+import com.async.labs.iss.fragments.location.viewpageradapterfragments.googlemaps.service.repository.RepositoryCurrentLocation
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
