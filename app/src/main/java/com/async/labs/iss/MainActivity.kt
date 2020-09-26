@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.nav_twitter -> {
                     setStatusBarAndToolbar(
-                        R.color.theme_color, true, "Twitter",
+                        "Twitter",
                         toolbar = true,
                         bottomNavigation = true
                     )
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_home -> {
                     setStatusBarAndToolbar(
-                        R.color.theme_color, true, "Home",
+                        "Home",
                         toolbar = true,
                         bottomNavigation = true
                     )
@@ -47,14 +47,15 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_location -> {
                     setStatusBarAndToolbar(
-                        R.color.white, false, "",
-                        toolbar = false,
+                        "Location",
+                        toolbar = true,
                         bottomNavigation = true
                     )
+                    binding.toolbar.help_button.visibility = View.GONE
                 }
                 R.id.homeItemFragment -> {
                     setStatusBarAndToolbar(
-                        R.color.theme_color, true, "",
+                        "",
                         toolbar = false,
                         bottomNavigation = false
                     )
@@ -79,20 +80,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setStatusBarAndToolbar(
-        color: Int,
-        whiteStatusBarLetters: Boolean,
         toolbarTitle: String,
         toolbar: Boolean,
         bottomNavigation: Boolean
     ) {
         binding.toolbar.toolbar_text_view_title.text = toolbarTitle
 
-        window.statusBarColor = resources.getColor(color, theme)
-        if (!whiteStatusBarLetters) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        } else {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_IMMERSIVE
-        }
+        window.statusBarColor = resources.getColor(R.color.theme_color, theme)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_IMMERSIVE
 
         if (toolbar) {
             binding.toolbar.visibility = View.VISIBLE
