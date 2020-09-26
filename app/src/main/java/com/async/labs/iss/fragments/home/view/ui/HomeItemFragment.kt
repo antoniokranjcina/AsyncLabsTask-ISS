@@ -60,11 +60,9 @@ class HomeItemFragment : Fragment(), View.OnClickListener {
         binding.youtubePlayerView.addYouTubePlayerListener(object :
             AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                youTubePlayer.loadVideo(homeWikipediaItems.youtubeId!!, 0F)
+                youTubePlayer.cueVideo(homeWikipediaItems.youtubeId!!, 0F)
             }
         })
-
-        binding.youtubePlayerView
 
         setOnClickListeners()
     }
