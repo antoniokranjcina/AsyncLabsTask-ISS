@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">International Space Station News</string>
+    <string name="app_name">ISS</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="twitter">Twitter</string>
@@ -15,9 +15,6 @@
     <string name="onboard_system">Onboard System</string>
 
     <string name="iss_text">The International Space Station (ISS) is a modular space station (habitable artificial satellite) in low Earth orbit. It is a multinational collaborative project between five participating space agencies: NASA (United States), Roscosmos (Russia), JAXA (Japan), ESA (Europe), and CSA (Canada). The ownership</string>
-    <string name="iss_purpose">The ISS was originally intended to be a laboratory, observatory, and factory while providing transportation, maintenance, and a low Earth orbit staging base for possible future missions to the Moon, Mars, and asteroids. However, not all of the uses envisioned in the initial memorandum of understanding</string>
-    <string name="iss_structure">The ISS is a third generation modular space station. Modular stations can allow modules to be added to or removed from the existing structure, allowing greater flexibility.Below is a diagram of major station components. The blue areas are pressurised sections accessible by the crew without using spacesuits</string>
-    <string name="iss_onboard_system">The critical systems are the atmosphere control system, the water supply system, the food supply facilities, the sanitation and hygiene equipment, and fire detection and suppression equipment. The Russian Orbital Segments life support systems are contained in the Zvezda service module. Some of </string>
     <string name="operations">Operations</string>
     <string name="src_content_description">Image</string>
     <string name="all_information_is_from">All Information is from</string>
