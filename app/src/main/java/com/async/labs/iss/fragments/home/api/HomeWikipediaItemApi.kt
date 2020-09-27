@@ -7,8 +7,8 @@ import retrofit2.http.GET
 interface HomeWikipediaItemApi {
 
     companion object {
-        //        const val BASE_URL = "http://localhost:3000"
-        const val BASE_URL = "http://426d57ae9fa2.ngrok.io"
+//        const val BASE_URL = "http://localhost:3000"
+const val BASE_URL = "http://bf6cddfe2b40.ngrok.io"
     }
 
     @GET("/home-about-info")
